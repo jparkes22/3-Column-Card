@@ -1,0 +1,119 @@
+:root{
+    --ff-title: 'Big Shoulders Display', cursive;
+    --ff-body: 'Lexend Deca', sans-serif;
+
+    --fw-700: 700;
+    --fw-400: 400;
+
+    --fs-400: 0.9375rem;
+
+    --clr-orange: hsl(31, 77%, 52%);
+    --clr-darkcyan: hsl(184, 100%, 22%);
+    --clr-vdarkcyan: hsl(179, 100%, 13%);
+
+    --clr-neutral: hsla(0, 0%, 100%, 0.75);
+    --clr-lightgray: hsl(0, 0%, 95%);
+
+    --br: 0.5rem;
+    --spacer: 2rem;
+}
+
+.container{
+    width: min(100% - 3rem, 920px);
+    margin-inline:auto;
+}
+
+.btn {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--clr-lightgray);
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 3rem;
+    border:2px solid var(--clr-lightgray);
+}
+
+h1,h2,h3{color:var(--clr-lightgray);}
+
+body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: var(--ff-body);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-400);
+    background-color: var(--clr-lightgray);
+    color: var(--clr-neutral);
+    line-height: 1.6;
+}
+
+.cards{
+    display:grid;
+    margin-top: 8em;
+    margin-bottom: 8em;
+}
+
+.card{
+    --clr-card: var(--clr-orange);
+    background-color: var(--clr-card);
+    padding:2.8em;
+}
+
+.card:first-child{
+    border-radius: var(--br) var(--br) 0 0;
+}
+.card:last-child{
+    border-radius: 0 0 var(--br) var(--br);
+}
+
+    .card--cyan{
+        --clr-card: var(--clr-darkcyan);
+    }
+
+    .card--darkcyan{
+        --clr-card: var(--clr-vdarkcyan);
+    }
+
+.card__image{
+    margin-bottom:var(--spacer);
+}
+
+.card__title{
+    font-family: var(--ff-title);
+    font-weight: var(--fw-700);
+    font-size: 2.2rem;
+    margin-bottom:0.8em;
+    text-transform: uppercase;
+}
+
+.card__desc{
+    margin-bottom:var(--spacer);
+}
+
+.card .btn{
+    color: var(--clr-card);
+}
+
+.card .btn:hover,
+.card .btn:focus{
+    color: var(--clr-lightgray);
+    border:2px solid var(--clr-lightgray);
+    background-color: transparent;
+}
+
+@media screen and (min-width:700px) {
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card__desc{
+        margin-bottom:5em;
+    }
+
+    .card:first-child{
+        border-radius: var(--br) 0 0 var(--br);
+    }
+    .card:last-child{
+        border-radius: 0 var(--br) var(--br) 0;
+    }
+}
