@@ -22,7 +22,9 @@
     width: min(100% - 3rem, 920px);
     margin-inline:auto;
 }
-
+.attribution{
+    color: #333;
+}
 .btn {
     cursor: pointer;
     text-decoration: none;
